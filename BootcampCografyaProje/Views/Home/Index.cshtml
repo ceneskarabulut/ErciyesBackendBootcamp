@@ -1,0 +1,38 @@
+﻿@model List<Cografya>
+<div class="row">
+    <div class="row">
+    
+        <section>
+           
+            <h1>Yer Şekillerini Etkileyen Dış Kuvvetler</h1>
+            <p>
+                Dış kuvvetler; akarsular, rüzgârlar, yer altı suları, buzullar, dalgalar ve akıntılar gibi çeşitli etmenlerin
+                Dünya'yı şekillendirmesidir. Bu etmenler atmosfer kökenli olup enerjilerini güneşten alırlar. Dış kuvvetler,
+                iç kuvvetlerin etkisiyle oluşan yüksek yerleri aşındırarak deniz seviyesine indirmeye çalışır.
+            </p>
+        </section>
+       
+        @foreach (var kuvvet in Model)
+        {
+
+            <div class="col-2">
+                <div class="card">
+
+                    <img src="~/img/@kuvvet.image" width="150" height="150" class="card-img-top" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            @kuvvet.title
+                        </h5>
+                    
+
+                        <a class="btn btn-outline-danger" asp-controller="Cografya" asp-action="Kuvvet" asp-route-id="@kuvvet.Id">Tanım</a>
+
+                        <a class="btn btn-outline-primary" asp-controller="Cografya" asp-action="Details" asp-route-id="@kuvvet.Id">Örnek</a>
+                    </div>
+
+                </div>
+            </div>
+
+        }
+    </div>
+    </div>

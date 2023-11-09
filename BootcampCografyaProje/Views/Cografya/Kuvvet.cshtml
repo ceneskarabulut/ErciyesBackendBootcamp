@@ -1,0 +1,20 @@
+﻿@model Cografya
+<div class="card mb-3" id="">
+    <div class="row">
+        
+            <div class="col-md-5">
+
+                <img src="~/img/@Model.image" width="300" height="200" alt="">
+            </div>
+            <div class="col-md-7">
+                <div class="card-body">
+                    <a asp-route-id="@Model.Id">
+                        <h2 class="card-text">@Model.title</h2>
+                    </a>
+                    <p class="card-text">@Model.description</p>
+                </div>
+            </div>
+        
+
+    </div>
+</div>   

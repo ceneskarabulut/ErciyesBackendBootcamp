@@ -1,0 +1,27 @@
+﻿@model Cografya
+<div class="row">
+    <div class="col-md-5">
+        <img src="~/img/@Model.image" width="300" height="200" alt="">
+        <div>
+            @if (Model.tags != null)
+            {
+                @foreach (var tag in Model.tags)
+                {
+                    <span class="badge bg-info">@tag</span>
+                }
+            }
+        </div>
+    </div>
+ 
+    <div class="col-md-7">
+        <div class="card-body">
+            <a asp-controller="Cografya" asp-action="Details" asp-route-id="@Model.Id">
+                <h2 class="card-title">@Model.title</h2>
+
+            </a>
+
+            <h3 class="card-text">@Model.example</h3>
+
+        </div>
+    </div>
+</div>
